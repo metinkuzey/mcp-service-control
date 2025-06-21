@@ -1,0 +1,61 @@
+server:
+  port: 8080
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+    operationsSorter: method
+    tagsSorter: alpha
+    display-request-duration: true
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mcpdb
+    username: mcpuser
+    password: mcppassword
+    driver-class-name: org.postgresql.Driver
+  security:
+    user:
+      name: admin
+      password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  sql:
+    init:
+      mode: always
+app:
+  jwtSecret: "metinSuperSecretKey_1234567890!@#%&*()_+"
+  jwtExpirationInMs: 3600000  # 1 saatlik geçerlilik süresi
+  jwtRefreshExpirationInMs: 604800000 # 7 gün
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics, prometheus
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+  logback:
+    rollingpolicy:
+      max-history: 7
+      max-file-size: 10MB
