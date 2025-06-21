@@ -120,6 +120,12 @@ Sample users for manual testing:
 
 ---
 
+## 📚 Related Article
+
+Learn more about the design, features, and implementation of this project in the Medium article:
+
+👉 [Building MCP Service Control: A Secure, Observable, and Scalable Spring Boot Microservice](https://medium.com/@metinkuzeyapp/building-mcp-service-control-a-secure-observable-and-scalable-spring-boot-microservice-c5fc183d7184)
+
 ## 📄 License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
